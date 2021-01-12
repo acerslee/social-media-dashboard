@@ -2,17 +2,19 @@ $(document).ready(function() {
 
   // factory functions
 
-  function SocialMediaDashBoard (platform, username, followers, count) {
+  function SocialMediaDashBoard (platform, username, followers, trend, count) {
     this.platform = platform;
     this.username = username;
     this.followers = followers;
+    this.trend = trend;
     this.count = count;
   }
 
-  function OverviewBox (title, platform, views, change) {
+  function OverviewBox (title, platform, views, trend, change) {
     this.title = title;
     this.platform = platform;
     this.views = views;
+    this.trend = trend;
     this.change = change;
   }
 
@@ -24,6 +26,7 @@ $(document).ready(function() {
     var $username = $('<h2 id = "username"></h2>');
     var $followers = $('<h1 id = "followers"></h1>');
     var $followersText = $('<p class = "followers-text"></p>')
+    var $trend = $('<img class = "trend">');
     var $count = $('<p class = "range"></p>');
 
     $mediaBox
@@ -40,8 +43,12 @@ $(document).ready(function() {
     $followersText
       .text('FOLLOWERS')
       .appendTo($mediaBox);
+    $trend
+      .attr("src",trendDirection(object.trend))
+      .appendTo($mediaBox);
     $count
       .text(object.count)
+      .css("color",trendDirectionCSS(object.trend))
       .appendTo($mediaBox);
   }
 
@@ -50,6 +57,7 @@ $(document).ready(function() {
     var $titleHeading = $('<p class = "title"></p>');
     var $icon = $('<img class = "images">');
     var $numbers = $('<p class = "numbers"></p>');
+    var $trend = $('<img class = "trend">');
     var $changeRange = $('<p class = "range"></p>');
 
     $overviewBox
@@ -63,8 +71,12 @@ $(document).ready(function() {
     $numbers
       .text(object.views)
       .appendTo($overviewBox);
+    $trend
+      .attr("src",trendDirection(object.trend))
+      .appendTo($overviewBox);
     $changeRange
       .text(object.change)
+      .css("color",trendDirectionCSS(object.trend))
       .appendTo($overviewBox);
   }
 
@@ -81,10 +93,26 @@ $(document).ready(function() {
     }
   }
 
-  const facebookHandle = new SocialMediaDashBoard('facebook','@nathanf', 1987, '12 Today');
-  const twitterHandle = new SocialMediaDashBoard('twitter','@nathanf', 1044, '99 Today');
-  const instagramHandle = new SocialMediaDashBoard('instagram','@realnathanf', '11k', '1099 Today');
-  const youtubeHandle = new SocialMediaDashBoard('youtube','Nathan F.', 8239, '144 Today');
+  function trendDirection(trend) {
+    if (trend === 'up') {
+      return 'images/icon-up.svg';
+    } else {
+      return 'images/icon-down.svg';
+    }
+  }
+
+  function trendDirectionCSS(trend) {
+    if (trend === 'up') {
+      return 'green';
+    } else {
+      return 'red';
+    }
+  }
+
+  const facebookHandle = new SocialMediaDashBoard('facebook','@nathanf', 1987, 'up', '12 Today');
+  const twitterHandle = new SocialMediaDashBoard('twitter','@nathanf', 1044, 'up', '99 Today');
+  const instagramHandle = new SocialMediaDashBoard('instagram','@realnathanf', '11k', 'up', '1099 Today');
+  const youtubeHandle = new SocialMediaDashBoard('youtube','Nathan F.', 8239, 'down', '144 Today');
 
   appendSocialMediaInfo(facebookHandle);
   appendSocialMediaInfo(twitterHandle);
@@ -92,14 +120,14 @@ $(document).ready(function() {
   appendSocialMediaInfo(youtubeHandle);
 
   //overview objects
-  const facebookViews = new OverviewBox('Page Views', 'facebook', 87, '3%');
-  const facebookLikes = new OverviewBox('Likes', 'facebook', 52, '2%');
-  const instaLikes = new OverviewBox('Likes', 'instagram', 5462, '2257%');
-  const instaViews = new OverviewBox('Profile Views', 'instagram', '52k', '1375%');
-  const retweets = new OverviewBox('Retweets', 'twitter', 117, '303%');
-  const tweetLikes = new OverviewBox('Likes', 'twitter', 507, '503%');
-  const youtubeLikes = new OverviewBox('Likes', 'youtube', 107, '19%');
-  const youtubeViews = new OverviewBox('Total Views', 'youtube', 1407, '12%');
+  const facebookViews = new OverviewBox('Page Views', 'facebook', 87, 'up', '3%');
+  const facebookLikes = new OverviewBox('Likes', 'facebook', 52, 'down', '2%');
+  const instaLikes = new OverviewBox('Likes', 'instagram', 5462, 'up', '2257%');
+  const instaViews = new OverviewBox('Profile Views', 'instagram', '52k', 'up', '1375%');
+  const retweets = new OverviewBox('Retweets', 'twitter', 117, 'up', '303%');
+  const tweetLikes = new OverviewBox('Likes', 'twitter', 507, 'up', '503%');
+  const youtubeLikes = new OverviewBox('Likes', 'youtube', 107, 'down', '19%');
+  const youtubeViews = new OverviewBox('Total Views', 'youtube', 1407, 'down', '12%');
 
   appendOverviewInfo(facebookViews);
   appendOverviewInfo(facebookLikes);

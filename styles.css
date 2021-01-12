@@ -1,3 +1,10 @@
+/*in general */
+#app{
+  width:60%;
+  margin: 0 auto 0 auto;
+}
+
+/*heading */
 .switch {
   position: relative;
   display: inline-block;
@@ -56,4 +63,45 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
+}
+
+/* .switch-box{
+  float:right;
+} */
+
+/*social media dashboard */
+
+#social-media-dashboard{
+  display:flex;
+  justify-content: space-around;
+}
+
+.media-box{
+  border: solid 1px;
+  background-color: #f8f8f8;
+  padding: 2rem 3rem 2rem 3rem;
+  text-align:center;
+}
+
+#username{
+  font-size:1rem;
+}
+/*overview dashboard*/
+
+#overview-dashboard{
+  display:flex;
+  justify-content: space-evenly;
+  flex-direction:row;
+}
+
+#overview-heading{
+  display:block;
+}
+
+.overview-box{
+  border: solid 1px;
+  background-color: #f8f8f8;
+  padding: 0 4rem 0 4rem;
+  text-align:center;
+  margin: 1rem;
 }
