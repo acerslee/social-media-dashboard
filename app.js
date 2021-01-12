@@ -1,6 +1,13 @@
 $(document).ready(function() {
 
-  // factory function
+  // factory functions
+
+  function SocialMediaDashBoard (username, followers, count) {
+    this.username = username;
+    this.followers = followers;
+    this.count = count;
+  }
+
   function OverviewBox (title, platform, views, change) {
     this.title = title;
     this.platform = platform;
@@ -8,9 +15,32 @@ $(document).ready(function() {
     this.change = change;
   }
 
-  //function to append the info into HTML
-  function appendInfo (object) {
+  //functions to append the info into HTML
+
+  function appendSocialMediaInfo (object) {
+    var $username = $('<h2 id = "username"></h2>');
+    var $followers = $('<h1 id = "followers"></h1>');
+    var $followersText = $('<p class = "followers-text"></p>')
+    var $count = $('<p class = "range"></p>');
+
+    $username
+      .text(object.username)
+      .appendTo('#social-media-dashboard');
+    $followers
+      .text(object.followers)
+      .appendTo('#social-media-dashboard');
+    $followersText
+      .text('FOLLOWERS')
+      .appendTo('#social-media-dashboard');
+    $count
+      .text(object.count)
+      .appendTo('#social-media-dashboard');
+  }
+
+
+  function appendOverviewInfo (object) {
     var $titleBox = $('<p class = "title"></p>');
+    //need to add icon selector
     // var $icon = $();
     var $numbers = $('<p class = "numbers"></p>');
     var $changeRange = $('<p class = "range"></p>');
@@ -31,21 +61,33 @@ $(document).ready(function() {
 
   }
 
+  const facebookHandle = new SocialMediaDashBoard('@nathanf', 1987, '12 Today');
+  const twitterHandle = new SocialMediaDashBoard('@nathanf', 1044, '99 Today');
+  const instagramHandle = new SocialMediaDashBoard('@realnathanf', '11k', '1099 Today');
+  const youtubeHandle = new SocialMediaDashBoard('Nathan F.', 8239, '144 Today');
+
+  appendSocialMediaInfo(facebookHandle);
+  appendSocialMediaInfo(twitterHandle);
+  appendSocialMediaInfo(instagramHandle);
+  appendSocialMediaInfo(youtubeHandle);
+
+  //overview objects
   const facebookViews = new OverviewBox('Page Views', 'facebook', 87, '3%');
-  appendInfo(facebookViews);
   const facebookLikes = new OverviewBox('Likes', 'facebook', 52, '2%');
-  appendInfo(facebookLikes);
   const instaLikes = new OverviewBox('Likes', 'instagram', 5462, '2257%');
-  appendInfo(instaLikes);
   const instaViews = new OverviewBox('Profile Views', 'instagram', '52k', '1375%');
-  appendInfo(instaViews);
   const retweets = new OverviewBox('Retweets', 'twitter', 117, '303%');
-  appendInfo(retweets);
   const tweetLikes = new OverviewBox('Likes', 'twitter', 507, '503%');
-  appendInfo(tweetLikes);
   const youtubeLikes = new OverviewBox('Likes', 'youtube', 107, '19%');
-  appendInfo(youtubeLikes);
   const youtubeViews = new OverviewBox('Total Views', 'youtube', 1407, '12%');
-  appendInfo(youtubeViews);
+
+  appendOverviewInfo(facebookViews);
+  appendOverviewInfo(facebookLikes);
+  appendOverviewInfo(instaLikes);
+  appendOverviewInfo(instaViews);
+  appendOverviewInfo(retweets);
+  appendOverviewInfo(tweetLikes);
+  appendOverviewInfo(youtubeLikes);
+  appendOverviewInfo(youtubeViews);
 
 })
