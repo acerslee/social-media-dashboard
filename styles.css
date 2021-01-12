@@ -1,6 +1,9 @@
 /*general */
 #app{
   margin: 0 auto 0 auto;
+  /* display:flex;
+  flex-direction: column;
+  align-items: center; */
 }
 
 #overview-heading, #total-followers, .dark-text, #followers, .followers-text, .title, .range, .numbers{
@@ -11,18 +14,26 @@
 
 #heading-container{
   background-color: #f8f8f8;
-  padding: 0 15rem 0 15rem;
+  height:10rem;
   display: flex;
   justify-content:space-around;
 }
 
+#heading-info{
+  display:flex;
+  align-items: center;
+  padding-top: 25px;
+}
 #overview-heading{
   margin: 1rem 0 0 0;
 }
 
 #total-followers{
   margin-top: 0;
+  font-size:1rem;
 }
+
+/*switch section */
 
 .switch-box{
   display:flex;
@@ -100,6 +111,8 @@ input:checked + .slider:before {
   grid-template-columns: repeat(4, 225px);
   grid-auto-rows: minmax(100px, auto);
   grid-gap:25px;
+  margin: 0 auto 0 auto;
+  width:80%;
 }
 
 .media-box{
@@ -111,12 +124,6 @@ input:checked + .slider:before {
   flex-direction: column;
   align-items: center;
 }
-
-/* .images-social{
-  float:left;
-  margin-top:10px;
-} */
-
 
 #username{
   font-size:1rem;
@@ -145,19 +152,48 @@ input:checked + .slider:before {
   margin-top:1rem;
 }
 
-
 /*overview dashboard*/
+
 
 #overview-dashboard{
   display: grid;
-  grid-template-columns: repeat(4, 275px);
+  grid-template-columns: repeat(4, 300px);
   grid-auto-rows: minmax(100px, auto);
   grid-gap:25px;
+  /* margin: 0 auto 0 auto; */
+
 }
 
 .overview-box{
   background-color: #f8f8f8;
-  padding: 0 4rem 0 4rem;
-  text-align:center;
+  padding: 0 1.5rem 0 1.5rem;
   margin: 1rem;
+  text-align: justify;
+}
+
+.top-container{
+  width:100%;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bottom-container{
+  width:100%;
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title{
+  font-size: 1rem;
+  white-space: nowrap;
+}
+
+.numbers{
+  margin-right:2rem;
+}
+
+.range{
+  font-size: 0.8rem;
 }

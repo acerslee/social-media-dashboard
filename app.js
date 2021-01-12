@@ -26,7 +26,7 @@ $(document).ready(function() {
     var $username = $('<h2 id = "username"></h2>');
     var $followers = $('<h1 id = "followers"></h1>');
     var $followersText = $('<p class = "followers-text"></p>')
-    var $trendContainer = $('<div class = "trend-container"></div>')
+    var $trendContainer = $('<div class = "trend-container-one"></div>')
     var $trend = $('<img class = "trend">');
     var $count = $('<p class = "range"></p>');
 
@@ -57,25 +57,28 @@ $(document).ready(function() {
 
   function appendOverviewInfo (object) {
     var $overviewBox = $('<div class = "overview-box"></div>');
+    var $topContainer = $('<div class = "top-container"></div>');
+    var $bottomContainer = $('<div class = "bottom-container"></div>');
     var $titleHeading = $('<h3 class = "title"></h3>');
-    var $icon = $('<img class = "images-overview">');
     var $numbers = $('<h1 class = "numbers"></h1>');
-    var $trendContainer = $('<div class = "trend-container"></div>');
+    var $icon = $('<img class = "images-overview">');
+    var $trendContainer = $('<div class = "trend-container-two"></div>');
     var $trend = $('<img class = "trend">');
     var $changeRange = $('<p class = "range"></p>');
 
-    $overviewBox
-      .appendTo('#overview-dashboard');
+    $overviewBox.appendTo('#overview-dashboard');
+    $topContainer.appendTo($overviewBox);
+    $bottomContainer.appendTo($overviewBox);
     $titleHeading
       .text(object.title)
-      .appendTo($overviewBox);
+      .appendTo($topContainer);
     $icon
       .attr("src",platformDecider(object.platform))
-      .appendTo($overviewBox);
+      .appendTo($topContainer);
     $numbers
       .text(object.views)
-      .appendTo($overviewBox);
-    $trendContainer.appendTo($overviewBox);
+      .appendTo($bottomContainer);
+    $trendContainer.appendTo($bottomContainer);
     $trend
       .attr("src",trendDirection(object.trend));
     $changeRange
