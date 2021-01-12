@@ -1,10 +1,30 @@
-/*in general */
+/*general */
 #app{
-  width:60%;
+  width:70%;
   margin: 0 auto 0 auto;
 }
 
+#overview-heading, #total-followers, .dark-text, .title, .range, .numbers{
+  font-family: 'Inter', sans-serif;
+}
+
+
 /*heading */
+
+#heading-container{
+  background-color: #f8f8f8;
+  padding: 0 15rem 0 15rem;
+  display:flex;
+  justify-content: space-between
+}
+
+#overview-heading{
+  margin: 1rem 0 0 0;
+}
+
+#total-followers{
+  margin-top: 0;
+}
 .switch {
   position: relative;
   display: inline-block;
@@ -65,9 +85,9 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
-/* .switch-box{
+.switch-box{
   float:right;
-} */
+}
 
 /*social media dashboard */
 
@@ -79,13 +99,15 @@ input:checked + .slider:before {
 .media-box{
   border: solid 1px;
   background-color: #f8f8f8;
-  padding: 2rem 3rem 2rem 3rem;
+  padding: 1rem 3rem 0 3rem;
   text-align:center;
 }
 
 #username{
   font-size:1rem;
+  font-family: 'Inter', sans-serif;
 }
+
 /*overview dashboard*/
 
 #overview-dashboard{
@@ -97,6 +119,7 @@ input:checked + .slider:before {
 #overview-heading{
   display:block;
 }
+
 
 .overview-box{
   border: solid 1px;
