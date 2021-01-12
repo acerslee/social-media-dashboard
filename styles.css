@@ -6,7 +6,7 @@
   align-items: center;
 }
 
-#overview-heading, #total-followers, .dark-text, #followers, .followers-text, .title, .range, .numbers{
+#header-heading, #overview-heading, #total-followers, .dark-text, #followers, .followers-text, .title, .range, .numbers{
   font-family: 'Inter', sans-serif;
 }
 
@@ -19,23 +19,30 @@
 
 #heading-container{
   background-color: #f8f8f8;
-  height:10rem;
+  height:12rem;
+  position:relative;
   display: flex;
   justify-content:space-around;
+  width: 60%;
+  margin-bottom: -2rem;
 }
 
-#heading-info{
-  display:flex;
-  align-items: center;
-  padding-top: 25px;
+#header-heading{
+  margin-bottom:0.3rem;
 }
-#overview-heading{
-  margin: 1rem 0 0 0;
+
+.heading-info{
+  padding-top:2rem;
+  padding-right:25rem;
 }
 
 #total-followers{
   margin-top: 0;
   font-size:1rem;
+}
+
+.dark-text{
+  margin-right: 0.5rem;
 }
 
 /*switch section */
@@ -112,12 +119,12 @@ input:checked + .slider:before {
 /*social media dashboard */
 
 #social-media-dashboard{
+  position:relative;
   display: grid;
-  grid-template-columns: repeat(4, 220px);
+  grid-template-columns: repeat(4, 245px);
   grid-auto-rows: minmax(100px, auto);
-  grid-gap:20px;
+  grid-gap:27px;
   margin: 0 auto 0 auto;
-  width:50%;
 }
 
 .media-box{
@@ -179,6 +186,7 @@ input:checked + .slider:before {
 
 .top-container{
   width:100%;
+  margin-top:0.5rem;
   display:flex;
   justify-content: space-between;
   align-items: center;

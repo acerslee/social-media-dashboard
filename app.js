@@ -135,10 +135,10 @@ $(document).ready(function() {
     }
   }
 
-  const facebookHandle = new SocialMediaDashBoard('facebook','@nathanf', 1987, 'up', '12 Today');
-  const twitterHandle = new SocialMediaDashBoard('twitter','@nathanf', 1044, 'up', '99 Today');
-  const instagramHandle = new SocialMediaDashBoard('instagram','@realnathanf', '11k', 'up', '1099 Today');
-  const youtubeHandle = new SocialMediaDashBoard('youtube','Nathan F.', 8239, 'down', '144 Today');
+  const facebookHandle = new SocialMediaDashBoard('facebook','@acerslee', 1987, 'up', '12 Today');
+  const twitterHandle = new SocialMediaDashBoard('twitter','@acerslee', 1044, 'up', '99 Today');
+  const instagramHandle = new SocialMediaDashBoard('instagram','@acerslee', '11k', 'up', '1099 Today');
+  const youtubeHandle = new SocialMediaDashBoard('youtube','Alex Lee', 8239, 'down', '144 Today');
 
   appendSocialMediaInfo(facebookHandle);
   appendSocialMediaInfo(twitterHandle);
