@@ -2,7 +2,8 @@ $(document).ready(function() {
 
   // factory functions
 
-  function SocialMediaDashBoard (username, followers, count) {
+  function SocialMediaDashBoard (platform, username, followers, count) {
+    this.platform = platform;
     this.username = username;
     this.followers = followers;
     this.count = count;
@@ -18,53 +19,72 @@ $(document).ready(function() {
   //functions to append the info into HTML
 
   function appendSocialMediaInfo (object) {
+    var $mediaBox = $('<div class = "media-box"></div>');
+    var $icon = $('<img class = "images">');
     var $username = $('<h2 id = "username"></h2>');
     var $followers = $('<h1 id = "followers"></h1>');
     var $followersText = $('<p class = "followers-text"></p>')
     var $count = $('<p class = "range"></p>');
 
+    $mediaBox
+      .appendTo('#social-media-dashboard')
+    $icon
+      .attr("src",platformDecider(object.platform))
+      .appendTo($mediaBox);
     $username
       .text(object.username)
-      .appendTo('#social-media-dashboard');
+      .appendTo($mediaBox);
     $followers
       .text(object.followers)
-      .appendTo('#social-media-dashboard');
+      .appendTo($mediaBox);
     $followersText
       .text('FOLLOWERS')
-      .appendTo('#social-media-dashboard');
+      .appendTo($mediaBox);
     $count
       .text(object.count)
-      .appendTo('#social-media-dashboard');
+      .appendTo($mediaBox);
   }
 
-
   function appendOverviewInfo (object) {
-    var $titleBox = $('<p class = "title"></p>');
-    //need to add icon selector
-    // var $icon = $();
+    var $overviewBox = $('<div class = "overview-box"></div>');
+    var $titleHeading = $('<p class = "title"></p>');
+    var $icon = $('<img class = "images">');
     var $numbers = $('<p class = "numbers"></p>');
     var $changeRange = $('<p class = "range"></p>');
 
-    $titleBox
-      .text(object.title)
+    $overviewBox
       .appendTo('#overview-dashboard');
+    $titleHeading
+      .text(object.title)
+      .appendTo($overviewBox);
+    $icon
+      .attr("src",platformDecider(object.platform))
+      .appendTo($overviewBox);
     $numbers
       .text(object.views)
-      .appendTo('#overview-dashboard');
+      .appendTo($overviewBox);
     $changeRange
       .text(object.change)
-      .appendTo('#overview-dashboard');
+      .appendTo($overviewBox);
   }
 
   //function to add media icon according to platform
-  function platformDecider() {
-
+  function platformDecider(platform) {
+    if (platform === 'facebook') {
+      return 'images/icon-facebook.svg';
+    } else if (platform === 'twitter') {
+      return 'images/icon-twitter.svg';
+    } else if (platform === 'instagram') {
+      return 'images/icon-instagram.svg';
+    } else {
+      return 'images/icon-youtube.svg';
+    }
   }
 
-  const facebookHandle = new SocialMediaDashBoard('@nathanf', 1987, '12 Today');
-  const twitterHandle = new SocialMediaDashBoard('@nathanf', 1044, '99 Today');
-  const instagramHandle = new SocialMediaDashBoard('@realnathanf', '11k', '1099 Today');
-  const youtubeHandle = new SocialMediaDashBoard('Nathan F.', 8239, '144 Today');
+  const facebookHandle = new SocialMediaDashBoard('facebook','@nathanf', 1987, '12 Today');
+  const twitterHandle = new SocialMediaDashBoard('twitter','@nathanf', 1044, '99 Today');
+  const instagramHandle = new SocialMediaDashBoard('instagram','@realnathanf', '11k', '1099 Today');
+  const youtubeHandle = new SocialMediaDashBoard('youtube','Nathan F.', 8239, '144 Today');
 
   appendSocialMediaInfo(facebookHandle);
   appendSocialMediaInfo(twitterHandle);
