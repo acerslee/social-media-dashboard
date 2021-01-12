@@ -6,6 +6,16 @@
   align-items: center;
 }
 
+body.light-theme {
+  color: #222;
+  background: #fff;
+}
+
+body.dark-theme{
+  color: hsl(230, 17%, 14%);
+  background: hsl(230, 17%, 14%);
+}
+
 #header-heading, #overview-heading, #total-followers, .dark-text, #followers, .followers-text, .title, .range, .numbers{
   font-family: 'Inter', sans-serif;
 }
@@ -13,6 +23,10 @@
 #social-media-dashboard :hover, #overview-dashboard :hover {
   background-color: #e0e0e0;
   cursor: pointer;
+}
+
+:checked{
+  background-color:orange;
 }
 
 /*heading */

@@ -164,4 +164,12 @@ $(document).ready(function() {
   appendOverviewInfo(youtubeLikes);
   appendOverviewInfo(youtubeViews);
 
+
+  //event listerners
+  const button = document.querySelector('#dark-mode-button');
+
+  button.addEventListener('click', function() {
+    document.body.classList.toggle('dark-theme');
+  })
+
 })
