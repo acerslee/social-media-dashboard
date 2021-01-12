@@ -4,18 +4,18 @@
   margin: 0 auto 0 auto;
 }
 
-#overview-heading, #total-followers, .dark-text, .title, .range, .numbers{
+#overview-heading, #total-followers, .dark-text, #followers, .followers-text, .title, .range, .numbers{
   font-family: 'Inter', sans-serif;
 }
-
 
 /*heading */
 
 #heading-container{
   background-color: #f8f8f8;
   padding: 0 15rem 0 15rem;
-  display:flex;
-  justify-content: space-between
+  display: grid;
+  grid-template-columns: repeat(4, 275px);
+  grid-auto-rows: minmax(150px, auto);
 }
 
 #overview-heading{
@@ -25,11 +25,17 @@
 #total-followers{
   margin-top: 0;
 }
+
+.switch-box{
+  display:flex;
+  justify-content: flex-end;
+  align-items: center;
+}
 .switch {
   position: relative;
   display: inline-block;
   width: 60px;
-  height: 34px;
+  height: 26px;
 }
 
 .switch input {
@@ -53,8 +59,8 @@
 .slider:before {
   position: absolute;
   content: "";
-  height: 26px;
-  width: 26px;
+  height: 21px;
+  width: 21px;
   left: 4px;
   bottom: 4px;
   background-color: white;
@@ -99,7 +105,7 @@ input:checked + .slider:before {
 .media-box{
   border: solid 1px;
   background-color: #f8f8f8;
-  padding: 1rem 3rem 0 3rem;
+  padding: 1rem 4.5rem 0 4.5rem;
   text-align:center;
 }
 
@@ -108,18 +114,31 @@ input:checked + .slider:before {
   font-family: 'Inter', sans-serif;
 }
 
+#followers, .followers-text{
+  margin: 0;
+}
+
+.followers-text{
+  font-size: 0.7rem;
+}
+
+.trend-container{
+  height: 5%;
+  display:flex;
+  flex-direction: row;
+}
+
+.range{
+  margin-top:1rem;
+}
+
 /*overview dashboard*/
 
 #overview-dashboard{
-  display:flex;
-  justify-content: space-evenly;
-  flex-direction:row;
+  display: grid;
+  grid-template-columns: repeat(4, 275px);
+  grid-auto-rows: minmax(100px, auto);
 }
-
-#overview-heading{
-  display:block;
-}
-
 
 .overview-box{
   border: solid 1px;

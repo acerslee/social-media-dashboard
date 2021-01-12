@@ -22,10 +22,11 @@ $(document).ready(function() {
 
   function appendSocialMediaInfo (object) {
     var $mediaBox = $('<div class = "media-box"></div>');
-    var $icon = $('<img class = "images">');
+    var $icon = $('<img class = "images-social">');
     var $username = $('<h2 id = "username"></h2>');
     var $followers = $('<h1 id = "followers"></h1>');
     var $followersText = $('<p class = "followers-text"></p>')
+    var $trendContainer = $('<div class = "trend-container"></div>')
     var $trend = $('<img class = "trend">');
     var $count = $('<p class = "range"></p>');
 
@@ -41,22 +42,24 @@ $(document).ready(function() {
       .text(object.followers)
       .appendTo($mediaBox);
     $followersText
-      .text('FOLLOWERS')
+      .text('F O L L O W E R S')
       .appendTo($mediaBox);
+    $trendContainer.appendTo($mediaBox);
     $trend
       .attr("src",trendDirection(object.trend))
-      .appendTo($mediaBox);
+      .appendTo($trendContainer);
     $count
       .text(object.count)
       .css("color",trendDirectionCSS(object.trend))
-      .appendTo($mediaBox);
+      .appendTo($trendContainer);
   }
 
   function appendOverviewInfo (object) {
     var $overviewBox = $('<div class = "overview-box"></div>');
-    var $titleHeading = $('<p class = "title"></p>');
-    var $icon = $('<img class = "images">');
-    var $numbers = $('<p class = "numbers"></p>');
+    var $titleHeading = $('<h3 class = "title"></h3>');
+    var $icon = $('<img class = "images-overview">');
+    var $numbers = $('<h1 class = "numbers"></h1>');
+    var $trendContainer = $('<div class = "trend-container"></div>');
     var $trend = $('<img class = "trend">');
     var $changeRange = $('<p class = "range"></p>');
 
@@ -71,13 +74,14 @@ $(document).ready(function() {
     $numbers
       .text(object.views)
       .appendTo($overviewBox);
+    $trendContainer.appendTo($overviewBox);
     $trend
       .attr("src",trendDirection(object.trend))
-      .appendTo($overviewBox);
+      .appendTo($trendContainer);
     $changeRange
       .text(object.change)
       .css("color",trendDirectionCSS(object.trend))
-      .appendTo($overviewBox);
+      .appendTo($trendContainer);
   }
 
   //function to add media icon according to platform
