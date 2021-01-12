@@ -1,6 +1,5 @@
 /*general */
 #app{
-  width:70%;
   margin: 0 auto 0 auto;
 }
 
@@ -13,9 +12,8 @@
 #heading-container{
   background-color: #f8f8f8;
   padding: 0 15rem 0 15rem;
-  display: grid;
-  grid-template-columns: repeat(4, 275px);
-  grid-auto-rows: minmax(150px, auto);
+  display: flex;
+  justify-content:space-around;
 }
 
 #overview-heading{
@@ -98,16 +96,27 @@ input:checked + .slider:before {
 /*social media dashboard */
 
 #social-media-dashboard{
-  display:flex;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: repeat(4, 225px);
+  grid-auto-rows: minmax(100px, auto);
+  grid-gap:25px;
 }
 
 .media-box{
-  border: solid 1px;
+  z-index: 1;
+  border-top: solid 0.4rem;
   background-color: #f8f8f8;
-  padding: 1rem 4.5rem 0 4.5rem;
-  text-align:center;
+  padding: 1.5rem;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
 }
+
+/* .images-social{
+  float:left;
+  margin-top:10px;
+} */
+
 
 #username{
   font-size:1rem;
@@ -116,6 +125,10 @@ input:checked + .slider:before {
 
 #followers, .followers-text{
   margin: 0;
+}
+
+#followers{
+  font-size:2.7rem;
 }
 
 .followers-text{
@@ -132,16 +145,17 @@ input:checked + .slider:before {
   margin-top:1rem;
 }
 
+
 /*overview dashboard*/
 
 #overview-dashboard{
   display: grid;
   grid-template-columns: repeat(4, 275px);
   grid-auto-rows: minmax(100px, auto);
+  grid-gap:25px;
 }
 
 .overview-box{
-  border: solid 1px;
   background-color: #f8f8f8;
   padding: 0 4rem 0 4rem;
   text-align:center;

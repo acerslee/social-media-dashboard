@@ -31,25 +31,26 @@ $(document).ready(function() {
     var $count = $('<p class = "range"></p>');
 
     $mediaBox
-      .appendTo('#social-media-dashboard')
+      .css("border-color", topBorderStyling(object.platform))
+      .appendTo('#social-media-dashboard');
     $icon
-      .attr("src",platformDecider(object.platform))
-      .appendTo($mediaBox);
+      .attr("src",platformDecider(object.platform));
     $username
-      .text(object.username)
+      .text(' ' + object.username)
+      .prepend($icon)
       .appendTo($mediaBox);
     $followers
       .text(object.followers)
       .appendTo($mediaBox);
     $followersText
-      .text('F O L L O W E R S')
+      .text(mediaText(object.platform))
       .appendTo($mediaBox);
     $trendContainer.appendTo($mediaBox);
     $trend
-      .attr("src",trendDirection(object.trend))
-      .appendTo($trendContainer);
+      .attr("src",trendDirection(object.trend));
     $count
       .text(object.count)
+      .prepend($trend)
       .css("color",trendDirectionCSS(object.trend))
       .appendTo($trendContainer);
   }
@@ -76,16 +77,16 @@ $(document).ready(function() {
       .appendTo($overviewBox);
     $trendContainer.appendTo($overviewBox);
     $trend
-      .attr("src",trendDirection(object.trend))
-      .appendTo($trendContainer);
+      .attr("src",trendDirection(object.trend));
     $changeRange
       .text(object.change)
+      .prepend($trend)
       .css("color",trendDirectionCSS(object.trend))
       .appendTo($trendContainer);
   }
 
-  //function to add media icon according to platform
-  function platformDecider(platform) {
+  //styling functions
+  function platformDecider (platform) {
     if (platform === 'facebook') {
       return 'images/icon-facebook.svg';
     } else if (platform === 'twitter') {
@@ -97,7 +98,25 @@ $(document).ready(function() {
     }
   }
 
-  function trendDirection(trend) {
+  function topBorderStyling (platform) {
+    if (platform === 'facebook' || platform === 'twitter') {
+      return '#2196F3';
+    } else if (platform === 'instagram') {
+      return 'linear-gradient(90deg, rgba(255,200,0,1) 23%, rgba(255,129,39,1) 52%, rgba(209,83,218,1) 88%)';
+    } else {
+      return '#fa3232';
+    }
+  }
+
+  function mediaText (platform) {
+    if (platform !== "youtube") {
+      return 'F O L L O W E R S';
+    } else {
+      return 'S U B S C R I B E R S';
+    }
+  }
+
+  function trendDirection (trend) {
     if (trend === 'up') {
       return 'images/icon-up.svg';
     } else {
@@ -105,11 +124,11 @@ $(document).ready(function() {
     }
   }
 
-  function trendDirectionCSS(trend) {
+  function trendDirectionCSS (trend) {
     if (trend === 'up') {
       return 'green';
     } else {
-      return 'red';
+      return '#fa3232';
     }
   }
 
