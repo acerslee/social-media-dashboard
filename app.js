@@ -35,7 +35,7 @@ $(document).ready(function() {
       .appendTo('#social-media-dashboard')
       .prepend($borderStyle);
     $borderStyle
-      .css("background-image", topBorderStyling(object.platform))
+      .css("background-image", topBorderStyling(object.platform));
     $icon
       .attr("src",platformDecider(object.platform));
     $username
@@ -138,6 +138,7 @@ $(document).ready(function() {
     }
   }
 
+  //social media objects
   const facebookHandle = new SocialMediaDashBoard('facebook','@acerslee', 1987, 'up', '12 Today');
   const twitterHandle = new SocialMediaDashBoard('twitter','@acerslee', 1044, 'up', '99 Today');
   const instagramHandle = new SocialMediaDashBoard('instagram','@acerslee', '11k', 'up', '1099 Today');

@@ -4,12 +4,7 @@ body{
   background: hsl(230, 17%, 14%);
 }
 
-#heading-container{
-  color: hsl(230, 17%, 14%);
-  background: hsl(230, 17%, 14%);
-}
-
-.media-box, .overview-box{
+#heading-container, .media-box, .overview-box{
   background-color: hsl(228, 28%, 20%);
 }
 
