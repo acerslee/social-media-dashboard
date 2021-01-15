@@ -15,10 +15,6 @@
   cursor: pointer;
 }
 
-#header-heading.light-theme{
-  color:black;
-}
-
 /*heading */
 
 #heading-container{
@@ -38,7 +34,7 @@
 
 .heading-info{
   padding-top:2rem;
-  padding-right:25rem;
+  padding-right:20rem;
 }
 
 #total-followers{
@@ -143,7 +139,7 @@ input:checked + .slider:before {
 
 .border-style{
   height: 0.5rem;
-  width: 15.5rem;
+  width: 15.3rem;
   margin-top: -2.5rem;
 }
 

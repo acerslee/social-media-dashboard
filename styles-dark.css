@@ -1,13 +1,23 @@
-body.dark-theme{
+/*change background color */
+body{
   color: hsl(230, 17%, 14%);
   background: hsl(230, 17%, 14%);
 }
 
-/* #heading-container.dark-theme{
+#heading-container{
   color: hsl(230, 17%, 14%);
   background: hsl(230, 17%, 14%);
 }
 
-#header-heading.dark-theme{
+.media-box, .overview-box{
+  background-color: hsl(228, 28%, 20%);
+}
+
+/*change font color */
+#header-heading, .dark-text, #username, #followers, #overview-heading, .title, .numbers, .range{
   color:white;
-} */
+}
+
+#total-followers, .followers-text{
+  color:hsl(228, 34%, 66%);
+}

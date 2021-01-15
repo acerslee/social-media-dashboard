@@ -168,12 +168,16 @@ $(document).ready(function() {
   appendOverviewInfo(youtubeViews);
 
 
-  //event listerners
+  //event handlers
   const button = document.querySelector('#dark-mode-button');
+  const theme = document.querySelector("#theme-link");
 
-  button.addEventListener('click', function() {
-    document.body.classList.toggle('dark-theme');
-    document.h1.classList.toggle('dark-theme');
+  button.addEventListener("click", function() {
+    if (theme.getAttribute("href") == "styles-dark.css") {
+      theme.href = "styles.css";
+    } else {
+      theme.href = "styles-dark.css";
+    }
   })
 
 })
