@@ -27,7 +27,7 @@
   position:relative;
   display: flex;
   justify-content:space-around;
-  width: 60%;
+  width: 80rem;
   margin-bottom: -2rem;
 }
 
@@ -48,6 +48,7 @@
 
 .dark-text{
   margin-right: 0.5rem;
+  font-weight:bold;
 }
 
 /*switch section */
@@ -141,14 +142,13 @@ input:checked + .slider:before {
 }
 
 .border-style{
-  height:100%;
-  width: 100%;
-  margin-top: -30px;
-  bottom: 0;
-  /* overflow: scroll; */
+  height: 0.5rem;
+  width: 15.5rem;
+  margin-top: -2.5rem;
 }
 
 #username{
+  margin-top:2rem;
   font-size:0.9rem;
   font-family: 'Inter', sans-serif;
 }
@@ -179,6 +179,7 @@ input:checked + .slider:before {
 
 #overview-heading{
   margin:1rem;
+  float:left;
 }
 
 #overview-dashboard{
