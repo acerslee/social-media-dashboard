@@ -1,0 +1,13 @@
+body.dark-theme{
+  color: hsl(230, 17%, 14%);
+  background: hsl(230, 17%, 14%);
+}
+
+/* #heading-container.dark-theme{
+  color: hsl(230, 17%, 14%);
+  background: hsl(230, 17%, 14%);
+}
+
+#header-heading.dark-theme{
+  color:white;
+} */

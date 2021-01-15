@@ -22,6 +22,7 @@ $(document).ready(function() {
 
   function appendSocialMediaInfo (object) {
     var $mediaBox = $('<div class = "media-box"></div>');
+    var $borderStyle = $('<div class = "border-style"></div>');
     var $icon = $('<img class = "images-social">');
     var $username = $('<h2 id = "username"></h2>');
     var $followers = $('<h1 id = "followers"></h1>');
@@ -31,8 +32,10 @@ $(document).ready(function() {
     var $count = $('<p class = "range"></p>');
 
     $mediaBox
-      .css("border-color", topBorderStyling(object.platform))
-      .appendTo('#social-media-dashboard');
+      .appendTo('#social-media-dashboard')
+      .prepend($borderStyle);
+    $borderStyle
+      .css("background-image", topBorderStyling(object.platform))
     $icon
       .attr("src",platformDecider(object.platform));
     $username
@@ -103,11 +106,11 @@ $(document).ready(function() {
 
   function topBorderStyling (platform) {
     if (platform === 'facebook' || platform === 'twitter') {
-      return '#2196F3';
+      return 'linear-gradient(90deg, rgba(10,81,248,1) 16%, rgba(10,37,252,1) 84%)';
     } else if (platform === 'instagram') {
-      return 'linear-gradient(90deg, rgba(255,200,0,1) 23%, rgba(255,129,39,1) 52%, rgba(209,83,218,1) 88%)';
+      return 'linear-gradient(90deg, rgba(248,167,10,1) 16%, rgba(252,10,220,1) 84%)';
     } else {
-      return '#fa3232';
+      return 'linear-gradient(90deg, rgba(225,0,0,1) 17%, rgba(255,0,0,1) 84%)';
     }
   }
 
@@ -170,6 +173,7 @@ $(document).ready(function() {
 
   button.addEventListener('click', function() {
     document.body.classList.toggle('dark-theme');
+    document.h1.classList.toggle('dark-theme');
   })
 
 })
