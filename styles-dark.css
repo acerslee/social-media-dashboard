@@ -13,9 +13,13 @@ body{
   background-color: hsl(228, 28%, 20%);
 }
 
+#social-media-dashboard :hover, #overview-dashboard :hover{
+  background-color:  hsl(225, 44%, 28%)
+}
+
 /*change font color */
 #header-heading, .dark-text, #username, #followers, #overview-heading, .title, .numbers, .range{
-  color:white;
+  color:#e3e3e1;
 }
 
 #total-followers, .followers-text{

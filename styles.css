@@ -175,7 +175,7 @@ input:checked + .slider:before {
 
 #overview-heading{
   margin:1rem;
-  float:left;
+  margin-right:51rem;
 }
 
 #overview-dashboard{
