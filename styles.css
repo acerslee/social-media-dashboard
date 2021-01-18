@@ -214,3 +214,42 @@ input:checked + .slider:before {
 .range{
   font-size: 0.8rem;
 }
+
+/****mobile view ****/
+@media screen and (max-width: 500px){
+  #heading-container{
+    width: 35rem;
+  }
+
+  #heading-container{
+    padding-right:5rem;
+  }
+
+  #header-heading{
+    font-size: 1rem;
+  }
+
+  #total-followers{
+    font-size: 1rem;
+  }
+
+  .switch-box{
+
+  }
+
+  .border-style{
+    height: 0.5rem;
+    width: 29rem;
+    margin-top: -2.5rem;
+  }
+
+  #social-media-dashboard, #overview-dashboard{
+    width: 100%;
+    display:flex;
+    flex-direction: column;
+  }
+
+  #overview-heading{
+    margin-right:11rem;
+  }
+}
