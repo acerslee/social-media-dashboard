@@ -218,15 +218,22 @@ input:checked + .slider:before {
 /****mobile view ****/
 @media screen and (max-width: 500px){
   #heading-container{
-    width: 35rem;
+    width: 15rem;
   }
 
   #heading-container{
-    padding-right:5rem;
+    padding-left:15rem;
+    height:10rem;
+  }
+
+  .heading-info{
+    height:0.5rem;
+    margin-top: -2rem;
   }
 
   #header-heading{
-    font-size: 1rem;
+    font-size: 1.3rem;
+    width: 250px;
   }
 
   #total-followers{
@@ -234,7 +241,8 @@ input:checked + .slider:before {
   }
 
   .switch-box{
-
+    margin-top:1rem;
+    /* padding-right: 30rem; */
   }
 
   .border-style{
